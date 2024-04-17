@@ -65,7 +65,13 @@ def progress_mappings(key, lang_code, index, total_images):
         "Text Removal": f"Rimozione del testo. Immagine {index + 1} di {total_images}",
         "Translating": f"Traduzione in corso. Immagine {index + 1} di {total_images}",
         "Rendering Text": f"Rendering del testo. Immagine {index + 1} di {total_images}",
-    }
+    },
+    "vi": {
+        "Forming TextBlocks": f"Tạo Khối Văn Bản. Hình ảnh {index + 1} trong tổng số {total_images}",
+        "Text Removal": f"Gỡ bỏ văn bản. Hình ảnh {index + 1} trong tổng số {total_images}",
+        "Translating": f"Dịch. Hình ảnh {index + 1} trong tổng số {total_images}",
+        "Rendering Text": f"Hiển thị văn bản. Hình ảnh {index + 1} trong tổng số {total_images}",
+    },
 }
 
     return mappings.get(lang_code, {}).get(key, "Status not found.")

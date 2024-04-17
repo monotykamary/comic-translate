@@ -34,8 +34,9 @@ language_codes = {
     "German": "de",
     "Dutch": "nl",
     "Spanish": "es",
-    "Italian": "it"
-    }
+    "Italian": "it",
+    "Vietnamese": "vi"
+}
 
 def get_language_codes(src_lng: str, trg_lng: str):
     src_lng_cd = language_codes[src_lng]

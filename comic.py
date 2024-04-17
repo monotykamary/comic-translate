@@ -9,7 +9,7 @@ for model in mandatory_models:
     get_models(model)
 
 supported_source_languages = ["Korean", "Japanese", "French", "Chinese", "English", "Russian", "German", "Dutch", "Spanish", "Italian"]
-supported_target_languages = ["English", "Korean", "Japanese", "French", "Simplified Chinese", "Traditional Chinese", "Russian", "German", "Dutch", "Spanish", "Italian"]
+supported_target_languages = ["English", "Korean", "Japanese", "French", "Simplified Chinese", "Traditional Chinese", "Russian", "German", "Dutch", "Spanish", "Italian", "Vietnamese"]
 supported_ocr = ["Default", "Microsoft OCR", "Google Cloud Vision"]
 supported_translators = ["GPT-4-Vision", "GPT-4", "GPT-3.5", "DeepL", "Google Translate"]
 dpg_windows = [
@@ -55,7 +55,8 @@ font_mappings = {
     "de": latin_cyrillic_font,
     "nl": latin_cyrillic_font,
     "es": latin_cyrillic_font,
-    "it": latin_cyrillic_font 
+    "it": latin_cyrillic_font ,
+    "vi": latin_cyrillic_font 
 }
 
 state_manager = AppStateManager(font_mappings, dpg_windows)
@@ -102,12 +103,13 @@ with dpg.window(width=420, height=560, tag="primary_window"):
                 dpg.add_menu_item(label='Nederlands', callback=lambda: state_manager.lang_change_process('nl'), tag = 'nl_lang_select')
                 dpg.add_menu_item(label='Español', callback=lambda: state_manager.lang_change_process('es'), tag = 'es_lang_select')
                 dpg.add_menu_item(label='Italiano', callback=lambda: state_manager.lang_change_process('it'), tag = 'it_lang_select')
+                dpg.add_menu_item(label='Tiếng Việt', callback=lambda: state_manager.lang_change_process('vi'), tag = 'vi_lang_select')
 
                 dpg.bind_item_font('ko_lang_select', ko_font)
                 dpg.bind_item_font('ja_lang_select', ja_font)
                 dpg.bind_item_font('zh-CN_lang_select', ch_sim_font)
                 dpg.bind_item_font('zh-TW_lang_select', ch_tr_font)
-                for lng in ['en_lang_select', 'it_lang_select', 'es_lang_select', 'nl_lang_select', 'de_lang_select', 'ru_lang_select', 'fr_lang_select']:
+                for lng in ['en_lang_select', 'it_lang_select', 'es_lang_select', 'nl_lang_select', 'de_lang_select', 'ru_lang_select', 'fr_lang_select', 'vi_lang_select']:
                     dpg.bind_item_font(lng, latin_cyrillic_font)
 
             with dpg.menu(label="Set Credentials", tag = "set_credentials_menu_title"):
